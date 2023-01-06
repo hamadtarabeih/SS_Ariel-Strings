@@ -2,28 +2,29 @@
 
 
 void shift_element(int* arr, int i) {
-    int k = i;
-    while(k > 0)
-    {
-     *(arr + k) = *(arr + k - 1);
-     k--;
-    }   
+    for (int item = i; item > 0; --item)
+        *(arr + item) = *(arr + item - 1);
 }
 
- 
-
+/*
+ * Function:  insertion_sort
+ * --------------------
+ * Makes an insertion sort to an array.
+ *
+ *  arr: starting pointer address of the array.
+ *
+ *  len: the array's size.
+ */
 void insertion_sort(int* arr, int len) {
-    int i = 1;
-    while( i < len)
+    for (int i = 1; i < len; ++i)
     {
-      int k = *(arr + i);
-      int j = (i - 1);
-      while (j >= 0 && *(arr + j) > k)
-      {
-           --j;
-      }
+        int key = *(arr + i), j = (i - 1);
+
+        while (j >= 0 && *(arr + j) > key)
+            --j;
+
         shift_element((arr + j), (i - j));
-        *(arr + j + 1) = k;
-        i++;
+
+        *(arr + j + 1) = key;
     }
 }
