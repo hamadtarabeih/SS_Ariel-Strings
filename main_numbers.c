@@ -3,31 +3,17 @@
 #include <stdlib.h>
 
 #define NumOfElements 50
-int main(){
-int *p = malloc(NumOfElements* sizeof(int));
-int *p1=p;
-int input;
-for(int i =0 ; i < NumOfElements; i++)
-{
-    scanf("%d", &input);
-    *p1  = input;
-    p1++;
-}
-p1=p;
-insertion_sort(p , NumOfElements);
-for(int i =0 ; i < NumOfElements; i++)
-{
-   if(i <NumOfElements-1)
-   {
-    printf("%d,",*p1);
-    p1++;
-   }
-   else{
-    printf("%d",*p1);
-   }
-}
-printf("\n");
-return 0;
-}
+int main() {
+    int arr[ARR_SIZE] = { 0 };
 
+    for (int i = 0; i < ARR_SIZE; ++i)
+        scanf("%d", &(*(arr+i)));
+
+    insertion_sort(arr, ARR_SIZE);
+
+    for (int i = 0; i < ARR_SIZE; ++i)
+        printf("%d%c", *(arr+i), ((i == (ARR_SIZE - 1)) ? '\n':','));
+
+    return 0;
+}
 
