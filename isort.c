@@ -10,13 +10,14 @@ void shift_element(int* arr, int i) {
 void insertion_sort(int* arr, int len) {
     for (int i = 1; i < len; ++i)
     {
-        int key = *(arr + i), j = (i - 1);
+        int save = *(arr + i);
+        int j = (i - 1);
 
-        while (j >= 0 && *(arr + j) > key)
+        while (j >= 0 && *(arr + j) > save)
             --j;
 
         shift_element((arr + j), (i - j));
 
-        *(arr + j + 1) = key;
+        *(arr + j + 1) = save;
     }
 }
