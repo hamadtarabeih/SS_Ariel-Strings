@@ -2,7 +2,7 @@
 
 
 void shift_element(int* arr, int i) {
-    for (int j = i; j > 0; j--)
+    for (int j = i; j > 0; --j)
         *(arr + j) = *(arr + j - 1);
 }
 
@@ -14,7 +14,7 @@ void insertion_sort(int* arr, int len) {
         int j = (i - 1);
 
         while (j >= 0 && *(arr + j) > Save)
-            j--;
+            --j;
 
         shift_element((arr + j), (i - j));
 
