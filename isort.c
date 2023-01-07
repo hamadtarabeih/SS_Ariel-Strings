@@ -10,7 +10,8 @@ void shift_element(int* arr, int i) {
 void insertion_sort(int* arr, int len) {
     for (int i = 1; i < len; ++i)
     {
-        int Save = *(arr + i), j = (i - 1);
+        int Save = *(arr + i);
+        int j = (i - 1);
 
         while (j >= 0 && *(arr + j) > Save)
             j--;
