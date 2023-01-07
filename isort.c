@@ -13,7 +13,7 @@ void insertion_sort(int* arr, int len) {
         int Save = *(arr + i), j = (i - 1);
 
         while (j >= 0 && *(arr + j) > Save)
-            --j;
+            j--;
 
         shift_element((arr + j), (i - j));
 
