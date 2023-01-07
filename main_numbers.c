@@ -11,8 +11,13 @@ int main() {
 
     insertion_sort(arr, NumOfElements);
 
-    for (int i = 0; i < NumOfElements; ++i)
-        printf("%d%c", *(arr+i), ((i == (NumOfElements - 1)) ? '\n':','));
+    for (int i = 0; i < NumOfElements; ++i){
+        if(i == (NumOfElements - 1)){
+            printf("%d" , *(arr+i));
+        }else{
+         printf("%d," , *(arr+i));
+        }
+    }
 
     return 0;
 }
