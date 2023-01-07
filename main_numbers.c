@@ -12,7 +12,12 @@ int main() {
     insertion_sort(arr, NumOfElements);
 
     for (int i = 0; i < NumOfElements; ++i){
-     printf("%d%c", *(arr+i), ((i == (NumOfElements - 1)) ? '\n':','));
+        if(i == (NumOfElements-1))
+        {
+            printf("%d\n",*(arr+i));
+        }else{
+            printf("%d%c",*(arr+i),',');
+        }
     }
 
     return 0;
